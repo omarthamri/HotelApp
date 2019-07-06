@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		48AF499922D1060D00937611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF499822D1060D00937611 /* AppDelegate.swift */; };
 		48AF499B22D1060D00937611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF499A22D1060D00937611 /* ViewController.swift */; };
-		48AF499E22D1060D00937611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AF499C22D1060D00937611 /* Main.storyboard */; };
 		48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48AF499F22D1060D00937611 /* HotelApp.xcdatamodeld */; };
 		48AF49A322D1060D00937611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AF49A222D1060D00937611 /* Assets.xcassets */; };
 		48AF49A622D1060D00937611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AF49A422D1060D00937611 /* LaunchScreen.storyboard */; };
@@ -38,7 +37,6 @@
 		48AF499522D1060D00937611 /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AF499822D1060D00937611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AF499A22D1060D00937611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		48AF499D22D1060D00937611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48AF49A022D1060D00937611 /* HotelApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotelApp.xcdatamodel; sourceTree = "<group>"; };
 		48AF49A222D1060D00937611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48AF49A522D1060D00937611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,9 +97,8 @@
 		48AF499722D1060D00937611 /* HotelApp */ = {
 			isa = PBXGroup;
 			children = (
+				48AF49C922D1076400937611 /* Controller */,
 				48AF499822D1060D00937611 /* AppDelegate.swift */,
-				48AF499A22D1060D00937611 /* ViewController.swift */,
-				48AF499C22D1060D00937611 /* Main.storyboard */,
 				48AF49A222D1060D00937611 /* Assets.xcassets */,
 				48AF49A422D1060D00937611 /* LaunchScreen.storyboard */,
 				48AF49A722D1060D00937611 /* Info.plist */,
@@ -126,6 +123,14 @@
 				48AF49BD22D1060D00937611 /* Info.plist */,
 			);
 			path = HotelAppUITests;
+			sourceTree = "<group>";
+		};
+		48AF49C922D1076400937611 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48AF499A22D1060D00937611 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +242,6 @@
 			files = (
 				48AF49A622D1060D00937611 /* LaunchScreen.storyboard in Resources */,
 				48AF49A322D1060D00937611 /* Assets.xcassets in Resources */,
-				48AF499E22D1060D00937611 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		48AF499C22D1060D00937611 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48AF499D22D1060D00937611 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		48AF49A422D1060D00937611 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
