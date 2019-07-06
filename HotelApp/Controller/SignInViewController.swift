@@ -85,13 +85,16 @@ class SignInViewController: UIViewController {
         return label
     }()
     
-    let SignUpLabel: UILabel = {
+     lazy var SignUpLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign Up"
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
+        let labelTapped = UITapGestureRecognizer(target: self, action: #selector(signUpAction))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(labelTapped)
         return label
     }()
 
@@ -103,6 +106,11 @@ class SignInViewController: UIViewController {
     
     @objc func signInAction() {
     
+    }
+    
+    @objc func signUpAction() {
+        let signUpViewController = SignUpViewController()
+        navigationController?.pushViewController(signUpViewController, animated: true)
     }
     
     func setupView() {
