@@ -14,6 +14,8 @@
 		48AF49A622D1060D00937611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AF49A422D1060D00937611 /* LaunchScreen.storyboard */; };
 		48AF49B122D1060D00937611 /* HotelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49B022D1060D00937611 /* HotelAppTests.swift */; };
 		48AF49BC22D1060D00937611 /* HotelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49BB22D1060D00937611 /* HotelAppUITests.swift */; };
+		48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CA22D1159E00937611 /* SignInViewController.swift */; };
+		48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CC22D1173900937611 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		48AF49B722D1060D00937611 /* HotelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AF49BB22D1060D00937611 /* HotelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAppUITests.swift; sourceTree = "<group>"; };
 		48AF49BD22D1060D00937611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48AF49CA22D1159E00937611 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		48AF49CC22D1173900937611 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				48AF499A22D1060D00937611 /* ViewController.swift */,
+				48AF49CA22D1159E00937611 /* SignInViewController.swift */,
+				48AF49CC22D1173900937611 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */,
 				48AF499B22D1060D00937611 /* ViewController.swift in Sources */,
 				48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */,
 				48AF499922D1060D00937611 /* AppDelegate.swift in Sources */,
+				48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
