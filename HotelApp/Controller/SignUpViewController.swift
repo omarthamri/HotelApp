@@ -119,12 +119,20 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func signUpAction() {
-        
+        saveUser()
     }
     
     @objc func signInAction() {
         let signInViewController = SignInViewController()
         navigationController?.pushViewController(signInViewController, animated: true)
+    }
+    
+    func saveUser() {
+        if  fullNameTf.text != "" && mailTf.text != "" && phoneTf.text != "" && passwordTf.text != "" {
+        ApiService.sharedInstance.saveUser(user: User(full_name: fullNameTf.text, email: mailTf.text, phone_number: phoneTf.text, password: passwordTf.text))
+        } else {
+            self.displayAlert(title: "", message: "please complete all fields")
+        }
     }
     
     func setupView() {

@@ -17,6 +17,9 @@
 		48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CA22D1159E00937611 /* SignInViewController.swift */; };
 		48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CC22D1173900937611 /* SignUpViewController.swift */; };
 		48F8AB0522D26031004E3C1A /* TextFieldLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0422D26031004E3C1A /* TextFieldLineView.swift */; };
+		48F8AB0822D26379004E3C1A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0722D26379004E3C1A /* User.swift */; };
+		48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0A22D26A34004E3C1A /* ApiService.swift */; };
+		48F8AB0E22D26DF1004E3C1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0D22D26DF1004E3C1A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		48AF49CA22D1159E00937611 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		48AF49CC22D1173900937611 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		48F8AB0422D26031004E3C1A /* TextFieldLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLineView.swift; sourceTree = "<group>"; };
+		48F8AB0722D26379004E3C1A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		48F8AB0A22D26A34004E3C1A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		48F8AB0D22D26DF1004E3C1A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 		48AF499722D1060D00937611 /* HotelApp */ = {
 			isa = PBXGroup;
 			children = (
+				48F8AB0C22D26DE1004E3C1A /* Helpers */,
+				48F8AB0922D26A20004E3C1A /* ApiService */,
+				48F8AB0622D26365004E3C1A /* Model */,
 				48F8AB0322D26004004E3C1A /* View */,
 				48AF49C922D1076400937611 /* Controller */,
 				48AF499822D1060D00937611 /* AppDelegate.swift */,
@@ -148,6 +157,30 @@
 				48F8AB0422D26031004E3C1A /* TextFieldLineView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		48F8AB0622D26365004E3C1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48F8AB0722D26379004E3C1A /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48F8AB0922D26A20004E3C1A /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				48F8AB0A22D26A34004E3C1A /* ApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		48F8AB0C22D26DE1004E3C1A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				48F8AB0D22D26DF1004E3C1A /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,12 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F8AB0E22D26DF1004E3C1A /* Extensions.swift in Sources */,
 				48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */,
 				48AF499B22D1060D00937611 /* ViewController.swift in Sources */,
 				48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */,
 				48AF499922D1060D00937611 /* AppDelegate.swift in Sources */,
 				48F8AB0522D26031004E3C1A /* TextFieldLineView.swift in Sources */,
 				48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */,
+				48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */,
+				48F8AB0822D26379004E3C1A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
