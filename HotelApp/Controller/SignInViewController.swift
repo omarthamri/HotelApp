@@ -49,17 +49,13 @@ class SignInViewController: UIViewController {
         return tf
     }()
     
-    let mailTfLine: UIView = {
-       let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let mailTfLine: TextFieldLineView = {
+       let view = TextFieldLineView(frame: .zero)
         return view
     }()
     
-    let passwordTfLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let passwordTfLine: TextFieldLineView = {
+        let view = TextFieldLineView(frame: .zero)
         return view
     }()
     

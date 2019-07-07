@@ -67,31 +67,23 @@ class SignUpViewController: UIViewController {
         return tf
     }()
     
-    let fullNameTfLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let fullNameTfLine: TextFieldLineView = {
+        let view = TextFieldLineView(frame: .zero)
         return view
     }()
     
-    let phoneTfLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let phoneTfLine: TextFieldLineView = {
+        let view = TextFieldLineView(frame: .zero)
         return view
     }()
     
-    let mailTfLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let mailTfLine: TextFieldLineView = {
+        let view = TextFieldLineView(frame: .zero)
         return view
     }()
     
-    let passwordTfLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        view.translatesAutoresizingMaskIntoConstraints = false
+    let passwordTfLine: TextFieldLineView = {
+        let view = TextFieldLineView(frame: .zero)
         return view
     }()
     
