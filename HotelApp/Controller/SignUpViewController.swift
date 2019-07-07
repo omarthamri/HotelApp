@@ -26,6 +26,99 @@ class SignUpViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    
+    let fullNameTf: UITextField = {
+        let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(string: "Full Name",
+                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        tf.borderStyle = .none
+        tf.textAlignment = .center
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
+    let mailTf: UITextField = {
+        let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(string: "Email",
+                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        tf.borderStyle = .none
+        tf.textAlignment = .center
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
+    let phoneTf: UITextField = {
+        let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(string: "Phone Number",
+                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        tf.borderStyle = .none
+        tf.textAlignment = .center
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
+    let passwordTf: UITextField = {
+        let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        tf.borderStyle = .none
+        tf.textAlignment = .center
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
+    let fullNameTfLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let phoneTfLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let mailTfLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let passwordTfLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign Up", for: .normal)
+        button.backgroundColor = UIColor.orange
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = 30
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var SignInLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Already a Member? Sign In"
+        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        let labelTapped = UITapGestureRecognizer(target: self, action: #selector(signInAction))
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(labelTapped)
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +126,46 @@ class SignUpViewController: UIViewController {
         setupConstraints()
     }
     
+    @objc func signUpAction() {
+        
+    }
+    
+    @objc func signInAction() {
+        let signInViewController = SignInViewController()
+        navigationController?.pushViewController(signInViewController, animated: true)
+    }
+    
     func setupView() {
         view.addSubview(backgroundImage)
         view.addSubview(titleLabel)
+        view.addSubview(mailTf)
+        view.addSubview(mailTfLine)
+        view.addSubview(passwordTf)
+        view.addSubview(passwordTfLine)
+        view.addSubview(fullNameTf)
+        view.addSubview(fullNameTfLine)
+        view.addSubview(phoneTf)
+        view.addSubview(phoneTfLine)
+        view.addSubview(signUpButton)
+        view.addSubview(SignInLabel)
     }
     
     func setupConstraints() {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":backgroundImage]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0" : backgroundImage]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":titleLabel]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-\(view.frame.height / 5.5)-[v0(36)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":titleLabel]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-\(view.frame.height / 5.5)-[v0(36)]-90-[v1(44)]-0.1-[v2(1)]-30-[v3(44)]-0.1-[v4(1)]-30-[v5(44)]-0.1-[v6(1)]-30-[v7(44)]-0.1-[v8(1)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":titleLabel,"v1" : fullNameTf,"v2" : fullNameTfLine,"v3":mailTf,"v4":mailTfLine,"v5":phoneTf,"v6":phoneTfLine,"v7":passwordTf,"v8":passwordTfLine]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":mailTf]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":mailTfLine]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":passwordTf]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":passwordTfLine]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":fullNameTf]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":fullNameTfLine]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":phoneTf]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":phoneTfLine]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":signUpButton]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(60)]-25-[v1(30)]-60-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": signUpButton,"v1":SignInLabel]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":SignInLabel]))
     }
 
 }
