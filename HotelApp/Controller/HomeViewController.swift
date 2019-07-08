@@ -33,6 +33,12 @@ class HomeViewController: UIViewController {
         return cvv
     }()
     
+    let recommondedHotelView : RecommandedHotelView = {
+       let rhv = RecommandedHotelView(frame: .zero)
+        rhv.translatesAutoresizingMaskIntoConstraints = false
+        return rhv
+    }()
+    
     let cityId = "cityId"
     let cityArray = [City(name: "New York",imageName: "newyork"),City(name: "Paris",imageName: "paris"),City(name: "London",imageName: "london"),City(name: "Dubai",imageName: "dubai"),City(name: "London",imageName: "london"),City(name: "New York",imageName: "newyork")]
     
@@ -47,14 +53,16 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.addSubview(searchTextField)
         view.addSubview(cityCollectionView)
+        view.addSubview(recommondedHotelView)
         cityCollectionView.register(CityCollectionViewCell.self, forCellWithReuseIdentifier: cityId)
         cityCollectionView.backgroundColor = UIColor.white
     }
     
     func setupConstraints() {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":searchTextField]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-84-[v0(60)]-20-[v1(110)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":searchTextField,"v1":cityCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-84-[v0(60)]-20-[v1(110)]-20-[v2]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":searchTextField,"v1":cityCollectionView,"v2":recommondedHotelView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cityCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":recommondedHotelView]))
     }
     
     func setupNavigationBar() {
