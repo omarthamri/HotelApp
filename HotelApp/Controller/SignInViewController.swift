@@ -101,7 +101,8 @@ class SignInViewController: UIViewController {
     }
     
     @objc func signInAction() {
-    
+    let homeViewController = HomeViewController()
+        navigationController?.pushViewController(homeViewController, animated: true)
     }
     
     @objc func signUpAction() {

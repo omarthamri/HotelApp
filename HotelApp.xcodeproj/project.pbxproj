@@ -16,6 +16,7 @@
 		48AF49BC22D1060D00937611 /* HotelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49BB22D1060D00937611 /* HotelAppUITests.swift */; };
 		48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CA22D1159E00937611 /* SignInViewController.swift */; };
 		48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CC22D1173900937611 /* SignUpViewController.swift */; };
+		48F29C8E22D3AD2D004BA8C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */; };
 		48F8AB0522D26031004E3C1A /* TextFieldLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0422D26031004E3C1A /* TextFieldLineView.swift */; };
 		48F8AB0822D26379004E3C1A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0722D26379004E3C1A /* User.swift */; };
 		48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F8AB0A22D26A34004E3C1A /* ApiService.swift */; };
@@ -55,6 +56,7 @@
 		48AF49BD22D1060D00937611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48AF49CA22D1159E00937611 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		48AF49CC22D1173900937611 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		48F8AB0422D26031004E3C1A /* TextFieldLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLineView.swift; sourceTree = "<group>"; };
 		48F8AB0722D26379004E3C1A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		48F8AB0A22D26A34004E3C1A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				48AF499A22D1060D00937611 /* ViewController.swift */,
 				48AF49CA22D1159E00937611 /* SignInViewController.swift */,
 				48AF49CC22D1173900937611 /* SignUpViewController.swift */,
+				48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				48AF499B22D1060D00937611 /* ViewController.swift in Sources */,
 				48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */,
 				48AF499922D1060D00937611 /* AppDelegate.swift in Sources */,
+				48F29C8E22D3AD2D004BA8C0 /* HomeViewController.swift in Sources */,
 				48F8AB0522D26031004E3C1A /* TextFieldLineView.swift in Sources */,
 				48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */,
 				48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */,
