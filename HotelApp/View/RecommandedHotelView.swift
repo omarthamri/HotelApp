@@ -20,6 +20,8 @@ class RecommandedHotelView: UIView {
         return rhv
     }()
     
+    var homeViewController: HomeViewController?
+    
     let ViewMoreLabel: UILabel = {
         let vml = UILabel()
         vml.text = "View More"
@@ -85,6 +87,10 @@ extension RecommandedHotelView: UICollectionViewDelegate,UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        homeViewController?.displayDetailHotel()
     }
     
 }

@@ -33,9 +33,10 @@ class HomeViewController: UIViewController {
         return cvv
     }()
     
-    let recommondedHotelView : RecommandedHotelView = {
+    lazy var recommondedHotelView : RecommandedHotelView = {
        let rhv = RecommandedHotelView(frame: .zero)
         rhv.translatesAutoresizingMaskIntoConstraints = false
+        rhv.homeViewController = self
         return rhv
     }()
     
@@ -81,6 +82,11 @@ class HomeViewController: UIViewController {
     
     @objc func showNavigationDrawer() {
         
+    }
+    
+    func displayDetailHotel() {
+        let hotelDetailViewController = HotelDetailViewController()
+        navigationController?.pushViewController(hotelDetailViewController, animated: true)
     }
     
     
