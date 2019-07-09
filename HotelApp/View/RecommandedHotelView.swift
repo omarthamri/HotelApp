@@ -42,7 +42,7 @@ class RecommandedHotelView: UIView {
         return rhcv
     }()
     
-    let recommendedHotels = [Hotel(name: "DZH Health Resort Club",imageName: "DZH_Health_Resort_Club",price:40),Hotel(name: "Best Western Bowery Hanbee Hotel",imageName: "Best_Western_Bowery_Hanbee_Hotel",price:220),Hotel(name: "Hotel Paris Louvre Opera",imageName: "Hotel_Paris_Louvre_Opera",price:170)]
+    let recommendedHotels = [Hotel(name: "DZH Health Resort Club",imageName: "DZH_Health_Resort_Club",price:40,number_of_stars: 3,hotel_description: "Featuring a restaurant and a 24-hour front desk, DZH Health Resort Club offers basic accommodations located 6.2 mi from Genting Highlands. Free WiFi is accessible throughout and free parking is provided. Fitted with air conditioning or fan-cooled, every room comes with a flat-screen TV The private bathroom has free toiletries and a hairdryer. Guests can enjoy a meal at the Chinese Restaurant, set above the fish pond. Guests also can experience the Chinese traditional Aye treatment at the Aye treatment center. "),Hotel(name: "Best Western Bowery Hanbee Hotel",imageName: "Best_Western_Bowery_Hanbee_Hotel",price:220,number_of_stars: 5, hotel_description: "Choose this completely non-smoking hotel in New York City, located next to the subway and major local attractions such as Canal Street, Chinatown and Little Italy. Welcome to the Best Western Bowery Hanbee Hotel, which offers exceptional customer service and accommodations at an affordable rate. This New York City hotel features well-appointed guest rooms and suites, each featuring cable satellite television with HBO® and free wireless high-speed Internet."),Hotel(name: "Hotel Paris Louvre Opera",imageName: "Hotel_Paris_Louvre_Opera",price:170,number_of_stars: 5, hotel_description: "The Paris Opera Louvre Hotel is an elegant establishment occupying a magnificent 17th-century building just a 5-minute walk from the famous Louvre Museum and Opéra Garnier. All rooms are air conditioned and soundproofed. Guests enjoy free Wi-Fi and a free minibar with free drinks and snacks.")]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,6 +90,7 @@ extension RecommandedHotelView: UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        homeViewController?.passedHotel = recommendedHotels[indexPath.item]
         homeViewController?.displayDetailHotel()
     }
     

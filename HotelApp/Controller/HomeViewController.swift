@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
         return stf
     }()
     
+    var passedHotel: Hotel? 
+    
     lazy var cityCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -86,6 +88,7 @@ class HomeViewController: UIViewController {
     
     func displayDetailHotel() {
         let hotelDetailViewController = HotelDetailViewController()
+        hotelDetailViewController.hotel = passedHotel
         navigationController?.pushViewController(hotelDetailViewController, animated: true)
     }
     
