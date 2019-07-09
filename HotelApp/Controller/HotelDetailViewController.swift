@@ -119,6 +119,73 @@ class HotelDetailViewController: UIViewController {
         fsiv.clipsToBounds = true
         return fsiv
     }()
+    
+    let nightLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "Nights"
+        return label
+   }()
+    
+    let roomLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "Rooms"
+        return label
+   }()
+    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "Date"
+        return label
+   }()
+
+    let nightIncrementView: NightRoomView = {
+     let niv = NightRoomView()
+     niv.translatesAutoresizingMaskIntoConstraints = false
+     return niv
+    }()
+    
+    let valueDateLabel: UILabel = {
+        let vdl = UILabel()
+        vdl.textAlignment = .center
+        vdl.textColor = UIColor.darkGray
+        vdl.translatesAutoresizingMaskIntoConstraints = false
+        vdl.font = UIFont.systemFont(ofSize: 11)
+        return vdl
+    }()
+
+    let roomIncrementView: NightRoomView = {
+     let riv = NightRoomView()
+     riv.translatesAutoresizingMaskIntoConstraints = false
+     return riv
+    }()
+    
+    let dateView: UIView = {
+     let dv = UIView()
+     dv.backgroundColor = UIColor.init(white: 0.95, alpha: 1)
+     dv.translatesAutoresizingMaskIntoConstraints = false
+     return dv
+    }()
+    
+    let bookButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Book Now", for: .normal)
+        button.backgroundColor = UIColor.orange
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = 30
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(BookAction), for: .touchUpInside)
+        return button
+    }()
 
     
     override func viewDidLoad() {
@@ -140,6 +207,15 @@ class HotelDetailViewController: UIViewController {
     view.addSubview(fiveStarImageView)
     view.addSubview(priceLabel)
     view.addSubview(hotelDescriptionLabel)
+    view.addSubview(nightLabel)
+    view.addSubview(roomLabel)
+    view.addSubview(dateLabel)
+    view.addSubview(nightIncrementView)
+    view.addSubview(roomIncrementView)
+    view.addSubview(dateView)
+    dateView.addSubview(valueDateLabel)
+    view.addSubview(bookButton)
+    setDate()
     }
     
     func setupNavigationBar() {
@@ -148,7 +224,7 @@ class HotelDetailViewController: UIViewController {
     
     func setupConstraints() {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0]-10-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":hotelImagesView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-74-[v0(\((view.frame.height - 94) / 2))]-20-[v1(20)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":hotelImagesView,"v1":hotelNameLabel]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-74-[v0(\((view.frame.height - 114) / 2.8))]-20-[v1(20)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":hotelImagesView,"v1":hotelNameLabel]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0(250)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":hotelNameLabel]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[v0(250)]-10-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":hotelStarLabel]))
         hotelStarLabel.topAnchor.constraint(equalTo: hotelImagesView.bottomAnchor,constant: 20).isActive = true
@@ -168,7 +244,46 @@ class HotelDetailViewController: UIViewController {
         priceLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0(60)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":priceLabel]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0]-10-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":hotelDescriptionLabel]))
-        hotelDescriptionLabel.topAnchor.constraint(equalTo: firstStarImageView.topAnchor,constant: 30).isActive = true
-        hotelDescriptionLabel.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        hotelDescriptionLabel.topAnchor.constraint(equalTo: firstStarImageView.bottomAnchor,constant: 5).isActive = true
+        hotelDescriptionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0(100)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":nightLabel]))
+        nightLabel.topAnchor.constraint(equalTo: hotelDescriptionLabel.bottomAnchor).isActive = true
+        nightLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        roomLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        roomLabel.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        roomLabel.topAnchor.constraint(equalTo: nightLabel.topAnchor).isActive = true
+        roomLabel.heightAnchor.constraint(equalTo: nightLabel.heightAnchor).isActive = true
+        dateLabel.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -40).isActive = true
+        dateLabel.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: nightLabel.topAnchor).isActive = true
+        dateLabel.heightAnchor.constraint(equalTo: nightLabel.heightAnchor).isActive = true
+        nightIncrementView.leftAnchor.constraint(equalTo: nightLabel.leftAnchor).isActive = true
+        nightIncrementView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        nightIncrementView.topAnchor.constraint(equalTo: nightLabel.bottomAnchor,constant: 10).isActive = true
+        nightIncrementView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        roomIncrementView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        roomIncrementView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        roomIncrementView.topAnchor.constraint(equalTo: nightIncrementView.topAnchor).isActive = true
+        roomIncrementView.heightAnchor.constraint(equalTo: nightIncrementView.heightAnchor).isActive = true
+        dateView.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -40).isActive = true
+        dateView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        dateView.topAnchor.constraint(equalTo: nightIncrementView.topAnchor).isActive = true
+        dateView.heightAnchor.constraint(equalTo: nightIncrementView.heightAnchor).isActive = true
+        dateView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":valueDateLabel]))
+        dateView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":valueDateLabel]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[v0]-10-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":bookButton]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(60)]-30-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":bookButton]))
     }
+
+    func setDate() {
+    let date = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd.MM.yyyy"
+    valueDateLabel.text = formatter.string(from: date)
+    }
+
+    @objc func BookAction() {
+    
+    }
+    
 }
