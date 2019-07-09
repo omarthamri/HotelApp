@@ -66,7 +66,7 @@ class HotelDetailViewController: UIViewController {
     
     let hotelDescriptionLabel: UILabel = {
     let label = UILabel()
-    label.textColor = UIColor.darkGray
+    label.textColor = UIColor.gray
     label.translatesAutoresizingMaskIntoConstraints = false
     label.font = UIFont.boldSystemFont(ofSize: 14)
     label.numberOfLines = 0
@@ -283,7 +283,8 @@ class HotelDetailViewController: UIViewController {
     }
 
     @objc func BookAction() {
-    
+    let paymentViewController = PaymentViewController()
+     navigationController?.pushViewController(paymentViewController, animated: true)
     }
     
 }

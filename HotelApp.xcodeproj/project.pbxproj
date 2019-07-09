@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		487201DF22D537D300E91AE5 /* NightRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201DE22D537D300E91AE5 /* NightRoomView.swift */; };
+		487201E122D5467100E91AE5 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E022D5467100E91AE5 /* PaymentViewController.swift */; };
+		487201E322D5488A00E91AE5 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E222D5488A00E91AE5 /* CreditCard.swift */; };
+		487201E522D5497800E91AE5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E422D5497800E91AE5 /* CardView.swift */; };
 		48A86DC322D4D8F3005D7C93 /* RecommandedHotelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86DC222D4D8F3005D7C93 /* RecommandedHotelCollectionViewCell.swift */; };
 		48A86DC522D4DCBD005D7C93 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86DC422D4DCBD005D7C93 /* Hotel.swift */; };
 		48A86DC722D4E96B005D7C93 /* HotelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86DC622D4E96B005D7C93 /* HotelDetailViewController.swift */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		487201DE22D537D300E91AE5 /* NightRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoomView.swift; sourceTree = "<group>"; };
+		487201E022D5467100E91AE5 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		487201E222D5488A00E91AE5 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		487201E422D5497800E91AE5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		48A86DC222D4D8F3005D7C93 /* RecommandedHotelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandedHotelCollectionViewCell.swift; sourceTree = "<group>"; };
 		48A86DC422D4DCBD005D7C93 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
 		48A86DC622D4E96B005D7C93 /* HotelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				48AF49CC22D1173900937611 /* SignUpViewController.swift */,
 				48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */,
 				48A86DC622D4E96B005D7C93 /* HotelDetailViewController.swift */,
+				487201E022D5467100E91AE5 /* PaymentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				48A86DC822D4EBF2005D7C93 /* HotelImagesView.swift */,
 				48A86DCA22D4EE6D005D7C93 /* HotelImageCollectionViewCell.swift */,
 				487201DE22D537D300E91AE5 /* NightRoomView.swift */,
+				487201E422D5497800E91AE5 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				48F8AB0722D26379004E3C1A /* User.swift */,
 				48F29C9122D3EF50004BA8C0 /* City.swift */,
 				48A86DC422D4DCBD005D7C93 /* Hotel.swift */,
+				487201E222D5488A00E91AE5 /* CreditCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,7 +362,9 @@
 				487201DF22D537D300E91AE5 /* NightRoomView.swift in Sources */,
 				48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */,
 				48F29C9222D3EF50004BA8C0 /* City.swift in Sources */,
+				487201E122D5467100E91AE5 /* PaymentViewController.swift in Sources */,
 				48F29C9422D3FF07004BA8C0 /* RecommandedHotelView.swift in Sources */,
+				487201E322D5488A00E91AE5 /* CreditCard.swift in Sources */,
 				48AF499B22D1060D00937611 /* ViewController.swift in Sources */,
 				48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */,
 				48A86DC722D4E96B005D7C93 /* HotelDetailViewController.swift in Sources */,
@@ -364,6 +375,7 @@
 				48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */,
 				48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */,
 				48A86DC922D4EBF2005D7C93 /* HotelImagesView.swift in Sources */,
+				487201E522D5497800E91AE5 /* CardView.swift in Sources */,
 				48F8AB0822D26379004E3C1A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
