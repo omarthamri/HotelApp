@@ -11,6 +11,7 @@ import UIKit
 class HotelImagesView: UIView {
     
     let hotelImageCollectionViewCellId = "hotelImageCollectionViewCellId"
+    var imageName: String?
     
     let pagecontrol : UIPageControl = {
         let pc = UIPageControl()
@@ -70,6 +71,9 @@ extension HotelImagesView: UICollectionViewDelegate,UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: hotelImageCollectionViewCellId, for: indexPath) as! HotelImageCollectionViewCell
+        if let imgName = imageName {
+            cell.hotelImageView.image = UIImage(named: imgName)
+        }
         return cell
     }
     

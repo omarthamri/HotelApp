@@ -21,6 +21,10 @@ class HotelDetailViewController: UIViewController {
             if let hotel_description = hotel?.hotel_description {
                 hotelDescriptionLabel.text = hotel_description
             }
+            if let imageName = hotel?.imageName {
+               hotelImagesView.imageName = imageName
+            }
+           
             if let numberOfStars = hotel?.number_of_stars {
                 hotelStarLabel.text = "\(numberOfStars) star hotel"
                 if numberOfStars == 3 {

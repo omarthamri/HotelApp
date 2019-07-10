@@ -10,10 +10,9 @@ import UIKit
 
 class HotelImageCollectionViewCell: UICollectionViewCell {
     
-    let hotelImageView: UIImageView = {
+    var hotelImageView: UIImageView = {
         let hiv = UIImageView()
         hiv.translatesAutoresizingMaskIntoConstraints = false
-        hiv.image = UIImage(named: "london")
         hiv.contentMode = .scaleAspectFill
         hiv.clipsToBounds = true
         hiv.backgroundColor = UIColor.red
