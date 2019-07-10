@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
         return stf
     }()
     
+    var recommendedHotels: [Hotel]?
+    
     var passedHotel: Hotel? 
     
     lazy var cityCollectionView: UICollectionView = {
@@ -94,6 +96,7 @@ class HomeViewController: UIViewController {
     
     func showMoreRecommendedHotels() {
         let moreHotelViewController = MoreHotelViewController()
+        moreHotelViewController.recommendedHotels = recommendedHotels
         navigationController?.pushViewController(moreHotelViewController, animated: true)
     }
     

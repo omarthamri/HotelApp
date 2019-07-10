@@ -98,6 +98,7 @@ extension RecommandedHotelView: UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     @objc func ViewMoreTapped() {
+        homeViewController?.recommendedHotels = recommendedHotels
         homeViewController?.showMoreRecommendedHotels()
     }
     
