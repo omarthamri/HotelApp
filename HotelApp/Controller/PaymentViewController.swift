@@ -18,9 +18,10 @@ class PaymentViewController:UIViewController {
         return cv
     }()
     
-    let addCardView: AddCardView = {
+    lazy var addCardView: AddCardView = {
        let acv = AddCardView()
         acv.translatesAutoresizingMaskIntoConstraints = false
+        acv.paymentViewController = self
         return acv
     }()
     
@@ -45,6 +46,11 @@ class PaymentViewController:UIViewController {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cardView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-74-[v0(\(view.frame.height / 3.5))]-20-[v1]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cardView,"v1":addCardView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":addCardView]))
+    }
+    
+    func goToCongratulation() {
+        let congratulationViewController = CongratulationViewController()
+        navigationController?.pushViewController(congratulationViewController, animated: true)
     }
     
     

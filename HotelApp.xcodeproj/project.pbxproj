@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		48565C0E22D64FC800BFE56A /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C0D22D64FC800BFE56A /* AddCardView.swift */; };
+		48565C1022D665FC00BFE56A /* CongratulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C0F22D665FC00BFE56A /* CongratulationViewController.swift */; };
+		48565C1222D668DC00BFE56A /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C1122D668DC00BFE56A /* CongratulationView.swift */; };
 		487201DF22D537D300E91AE5 /* NightRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201DE22D537D300E91AE5 /* NightRoomView.swift */; };
 		487201E122D5467100E91AE5 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E022D5467100E91AE5 /* PaymentViewController.swift */; };
 		487201E322D5488A00E91AE5 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E222D5488A00E91AE5 /* CreditCard.swift */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		48565C0D22D64FC800BFE56A /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		48565C0F22D665FC00BFE56A /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
+		48565C1122D668DC00BFE56A /* CongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
 		487201DE22D537D300E91AE5 /* NightRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoomView.swift; sourceTree = "<group>"; };
 		487201E022D5467100E91AE5 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		487201E222D5488A00E91AE5 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */,
 				48A86DC622D4E96B005D7C93 /* HotelDetailViewController.swift */,
 				487201E022D5467100E91AE5 /* PaymentViewController.swift */,
+				48565C0F22D665FC00BFE56A /* CongratulationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				487201DE22D537D300E91AE5 /* NightRoomView.swift */,
 				487201E422D5497800E91AE5 /* CardView.swift */,
 				48565C0D22D64FC800BFE56A /* AddCardView.swift */,
+				48565C1122D668DC00BFE56A /* CongratulationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,11 +365,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A86DC522D4DCBD005D7C93 /* Hotel.swift in Sources */,
+				48565C1222D668DC00BFE56A /* CongratulationView.swift in Sources */,
 				48A86DCB22D4EE6D005D7C93 /* HotelImageCollectionViewCell.swift in Sources */,
 				48F8AB0E22D26DF1004E3C1A /* Extensions.swift in Sources */,
 				48A86DC322D4D8F3005D7C93 /* RecommandedHotelCollectionViewCell.swift in Sources */,
 				487201DF22D537D300E91AE5 /* NightRoomView.swift in Sources */,
 				48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */,
+				48565C1022D665FC00BFE56A /* CongratulationViewController.swift in Sources */,
 				48F29C9222D3EF50004BA8C0 /* City.swift in Sources */,
 				487201E122D5467100E91AE5 /* PaymentViewController.swift in Sources */,
 				48F29C9422D3FF07004BA8C0 /* RecommandedHotelView.swift in Sources */,

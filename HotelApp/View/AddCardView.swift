@@ -10,6 +10,8 @@ import UIKit
 
 class AddCardView: UIView {
     
+    var paymentViewController: PaymentViewController?
+    
     let addCardLabel: UILabel = {
        let acl = UILabel()
        acl.textColor = UIColor.darkGray
@@ -189,7 +191,7 @@ class AddCardView: UIView {
     }
     
     @objc func AddCardAction() {
-        
+        paymentViewController?.goToCongratulation()
     }
     
 }
