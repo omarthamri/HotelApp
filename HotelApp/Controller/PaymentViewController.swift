@@ -18,6 +18,12 @@ class PaymentViewController:UIViewController {
         return cv
     }()
     
+    let addCardView: AddCardView = {
+       let acv = AddCardView()
+        acv.translatesAutoresizingMaskIntoConstraints = false
+        return acv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -32,11 +38,13 @@ class PaymentViewController:UIViewController {
     func setupView() {
         view.backgroundColor = UIColor.white
         view.addSubview(cardView)
+        view.addSubview(addCardView)
     }
     
     func setupConstraints() {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cardView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-74-[v0(\(view.frame.height / 3.5))]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cardView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-74-[v0(\(view.frame.height / 3.5))]-20-[v1]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cardView,"v1":addCardView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":addCardView]))
     }
     
     

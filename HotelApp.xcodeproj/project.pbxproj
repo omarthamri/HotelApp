@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48565C0E22D64FC800BFE56A /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C0D22D64FC800BFE56A /* AddCardView.swift */; };
 		487201DF22D537D300E91AE5 /* NightRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201DE22D537D300E91AE5 /* NightRoomView.swift */; };
 		487201E122D5467100E91AE5 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E022D5467100E91AE5 /* PaymentViewController.swift */; };
 		487201E322D5488A00E91AE5 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487201E222D5488A00E91AE5 /* CreditCard.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48565C0D22D64FC800BFE56A /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		487201DE22D537D300E91AE5 /* NightRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoomView.swift; sourceTree = "<group>"; };
 		487201E022D5467100E91AE5 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		487201E222D5488A00E91AE5 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				48A86DCA22D4EE6D005D7C93 /* HotelImageCollectionViewCell.swift */,
 				487201DE22D537D300E91AE5 /* NightRoomView.swift */,
 				487201E422D5497800E91AE5 /* CardView.swift */,
+				48565C0D22D64FC800BFE56A /* AddCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				487201E322D5488A00E91AE5 /* CreditCard.swift in Sources */,
 				48AF499B22D1060D00937611 /* ViewController.swift in Sources */,
 				48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */,
+				48565C0E22D64FC800BFE56A /* AddCardView.swift in Sources */,
 				48A86DC722D4E96B005D7C93 /* HotelDetailViewController.swift in Sources */,
 				48F29C9022D3EDDF004BA8C0 /* CityCollectionViewCell.swift in Sources */,
 				48AF499922D1060D00937611 /* AppDelegate.swift in Sources */,
