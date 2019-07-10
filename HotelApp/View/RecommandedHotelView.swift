@@ -22,13 +22,16 @@ class RecommandedHotelView: UIView {
     
     var homeViewController: HomeViewController?
     
-    let ViewMoreLabel: UILabel = {
+    lazy var ViewMoreLabel: UILabel = {
         let vml = UILabel()
         vml.text = "View More"
         vml.textColor = UIColor.darkGray
         vml.translatesAutoresizingMaskIntoConstraints = false
         vml.font = UIFont.systemFont(ofSize: 13)
         vml.textAlignment = .right
+        let labelTapped = UITapGestureRecognizer(target: self, action: #selector(ViewMoreTapped))
+        vml.isUserInteractionEnabled = true
+        vml.addGestureRecognizer(labelTapped)
         return vml
     }()
     
@@ -92,6 +95,10 @@ extension RecommandedHotelView: UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         homeViewController?.passedHotel = recommendedHotels[indexPath.item]
         homeViewController?.displayDetailHotel()
+    }
+    
+    @objc func ViewMoreTapped() {
+        homeViewController?.showMoreRecommendedHotels()
     }
     
 }

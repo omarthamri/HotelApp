@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4845FE8822D69026008EA900 /* MoreHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845FE8722D69026008EA900 /* MoreHotelViewController.swift */; };
 		48565C0E22D64FC800BFE56A /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C0D22D64FC800BFE56A /* AddCardView.swift */; };
 		48565C1022D665FC00BFE56A /* CongratulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C0F22D665FC00BFE56A /* CongratulationViewController.swift */; };
 		48565C1222D668DC00BFE56A /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48565C1122D668DC00BFE56A /* CongratulationView.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4845FE8722D69026008EA900 /* MoreHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreHotelViewController.swift; sourceTree = "<group>"; };
 		48565C0D22D64FC800BFE56A /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		48565C0F22D665FC00BFE56A /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
 		48565C1122D668DC00BFE56A /* CongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				48A86DC622D4E96B005D7C93 /* HotelDetailViewController.swift */,
 				487201E022D5467100E91AE5 /* PaymentViewController.swift */,
 				48565C0F22D665FC00BFE56A /* CongratulationViewController.swift */,
+				4845FE8722D69026008EA900 /* MoreHotelViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				48AF499922D1060D00937611 /* AppDelegate.swift in Sources */,
 				48F29C8E22D3AD2D004BA8C0 /* HomeViewController.swift in Sources */,
 				48F8AB0522D26031004E3C1A /* TextFieldLineView.swift in Sources */,
+				4845FE8822D69026008EA900 /* MoreHotelViewController.swift in Sources */,
 				48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */,
 				48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */,
 				48A86DC922D4EBF2005D7C93 /* HotelImagesView.swift in Sources */,

@@ -92,6 +92,11 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(hotelDetailViewController, animated: true)
     }
     
+    func showMoreRecommendedHotels() {
+        let moreHotelViewController = MoreHotelViewController()
+        navigationController?.pushViewController(moreHotelViewController, animated: true)
+    }
+    
     
 
 }
