@@ -30,6 +30,8 @@
 		48AF49BC22D1060D00937611 /* HotelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49BB22D1060D00937611 /* HotelAppUITests.swift */; };
 		48AF49CB22D1159E00937611 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CA22D1159E00937611 /* SignInViewController.swift */; };
 		48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF49CC22D1173900937611 /* SignUpViewController.swift */; };
+		48B8C7E122D79A3C00E18E00 /* NavDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C7E022D79A3C00E18E00 /* NavDrawerView.swift */; };
+		48B8C7E322D79B2000E18E00 /* CloseDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C7E222D79B2000E18E00 /* CloseDrawerView.swift */; };
 		48F29C8E22D3AD2D004BA8C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */; };
 		48F29C9022D3EDDF004BA8C0 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C8F22D3EDDF004BA8C0 /* CityCollectionViewCell.swift */; };
 		48F29C9222D3EF50004BA8C0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C9122D3EF50004BA8C0 /* City.swift */; };
@@ -87,6 +89,8 @@
 		48AF49BD22D1060D00937611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48AF49CA22D1159E00937611 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		48AF49CC22D1173900937611 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		48B8C7E022D79A3C00E18E00 /* NavDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDrawerView.swift; sourceTree = "<group>"; };
+		48B8C7E222D79B2000E18E00 /* CloseDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseDrawerView.swift; sourceTree = "<group>"; };
 		48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		48F29C8F22D3EDDF004BA8C0 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		48F29C9122D3EF50004BA8C0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				48565C0D22D64FC800BFE56A /* AddCardView.swift */,
 				48565C1122D668DC00BFE56A /* CongratulationView.swift */,
 				4845FE8922D69703008EA900 /* MoreHotelCollectionViewCell.swift */,
+				48B8C7E022D79A3C00E18E00 /* NavDrawerView.swift */,
+				48B8C7E222D79B2000E18E00 /* CloseDrawerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,12 +393,14 @@
 				48565C0E22D64FC800BFE56A /* AddCardView.swift in Sources */,
 				48A86DC722D4E96B005D7C93 /* HotelDetailViewController.swift in Sources */,
 				48F29C9022D3EDDF004BA8C0 /* CityCollectionViewCell.swift in Sources */,
+				48B8C7E322D79B2000E18E00 /* CloseDrawerView.swift in Sources */,
 				48AF499922D1060D00937611 /* AppDelegate.swift in Sources */,
 				48F29C8E22D3AD2D004BA8C0 /* HomeViewController.swift in Sources */,
 				48F8AB0522D26031004E3C1A /* TextFieldLineView.swift in Sources */,
 				4845FE8822D69026008EA900 /* MoreHotelViewController.swift in Sources */,
 				4845FE8A22D69703008EA900 /* MoreHotelCollectionViewCell.swift in Sources */,
 				48AF49CD22D1173900937611 /* SignUpViewController.swift in Sources */,
+				48B8C7E122D79A3C00E18E00 /* NavDrawerView.swift in Sources */,
 				48F8AB0B22D26A34004E3C1A /* ApiService.swift in Sources */,
 				48A86DC922D4EBF2005D7C93 /* HotelImagesView.swift in Sources */,
 				487201E522D5497800E91AE5 /* CardView.swift in Sources */,

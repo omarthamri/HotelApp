@@ -23,6 +23,18 @@ class HomeViewController: UIViewController {
         return stf
     }()
     
+    var leftAnchor: NSLayoutConstraint?
+    
+    let navDrawerView : NavDrawerView = {
+       let ndv = NavDrawerView()
+       ndv.translatesAutoresizingMaskIntoConstraints = false
+       return ndv
+    }()
+    
+    var widthNavDrawer: CGFloat?
+    
+     let currentWindow: UIWindow? = UIApplication.shared.keyWindow
+    
     var recommendedHotels: [Hotel]?
     
     var passedHotel: Hotel? 
@@ -61,6 +73,7 @@ class HomeViewController: UIViewController {
         view.addSubview(recommondedHotelView)
         cityCollectionView.register(CityCollectionViewCell.self, forCellWithReuseIdentifier: cityId)
         cityCollectionView.backgroundColor = UIColor.white
+        currentWindow?.addSubview(navDrawerView)
     }
     
     func setupConstraints() {
@@ -68,6 +81,12 @@ class HomeViewController: UIViewController {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-84-[v0(60)]-20-[v1(110)]-20-[v2]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":searchTextField,"v1":cityCollectionView,"v2":recommondedHotelView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cityCollectionView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":recommondedHotelView]))
+        widthNavDrawer = (currentWindow?.frame.width)! * 2 / 3
+        navDrawerView.widthAnchor.constraint(equalToConstant: widthNavDrawer!).isActive = true
+        navDrawerView.heightAnchor.constraint(equalTo: (currentWindow?.heightAnchor)!).isActive = true
+       leftAnchor = navDrawerView.leftAnchor.constraint(equalTo: (currentWindow?.leftAnchor)!,constant: -widthNavDrawer!)
+        leftAnchor?.isActive = true
+        navDrawerView.topAnchor.constraint(equalTo: (currentWindow?.topAnchor)!).isActive = true
     }
     
     func setupNavigationBar() {
@@ -85,6 +104,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc func showNavigationDrawer() {
+        leftAnchor?.constant = 0
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+            self.currentWindow?.layoutIfNeeded()
+            self.currentWindow?.updateConstraints()
+            self.currentWindow?.setNeedsLayout()
+            self.view.layoutIfNeeded()
+            self.view.setNeedsLayout()
+        })
         
     }
     
