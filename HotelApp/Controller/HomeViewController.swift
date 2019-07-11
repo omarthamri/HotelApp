@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     }()
     
     var leftAnchor: NSLayoutConstraint?
+    var rightAnchor: NSLayoutConstraint?
     
     let navDrawerView : NavDrawerView = {
        let ndv = NavDrawerView()
@@ -31,7 +32,17 @@ class HomeViewController: UIViewController {
        return ndv
     }()
     
+    lazy var closeDrawerView : CloseDrawerView = {
+        let ndv = CloseDrawerView()
+        ndv.translatesAutoresizingMaskIntoConstraints = false
+        let viewTapped = UITapGestureRecognizer(target: self, action: #selector(closeNavDrawer))
+        ndv.isUserInteractionEnabled = true
+        ndv.addGestureRecognizer(viewTapped)
+        return ndv
+    }()
+    
     var widthNavDrawer: CGFloat?
+    var widthCloseNavDrawer: CGFloat?
     
      let currentWindow: UIWindow? = UIApplication.shared.keyWindow
     
@@ -74,6 +85,7 @@ class HomeViewController: UIViewController {
         cityCollectionView.register(CityCollectionViewCell.self, forCellWithReuseIdentifier: cityId)
         cityCollectionView.backgroundColor = UIColor.white
         currentWindow?.addSubview(navDrawerView)
+        currentWindow?.addSubview(closeDrawerView)
     }
     
     func setupConstraints() {
@@ -82,11 +94,17 @@ class HomeViewController: UIViewController {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cityCollectionView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":recommondedHotelView]))
         widthNavDrawer = (currentWindow?.frame.width)! * 2 / 3
+        widthCloseNavDrawer = (currentWindow?.frame.width)! / 3
         navDrawerView.widthAnchor.constraint(equalToConstant: widthNavDrawer!).isActive = true
         navDrawerView.heightAnchor.constraint(equalTo: (currentWindow?.heightAnchor)!).isActive = true
        leftAnchor = navDrawerView.leftAnchor.constraint(equalTo: (currentWindow?.leftAnchor)!,constant: -widthNavDrawer!)
         leftAnchor?.isActive = true
         navDrawerView.topAnchor.constraint(equalTo: (currentWindow?.topAnchor)!).isActive = true
+        closeDrawerView.widthAnchor.constraint(equalToConstant: widthCloseNavDrawer!).isActive = true
+        closeDrawerView.heightAnchor.constraint(equalTo: (currentWindow?.heightAnchor)!).isActive = true
+        rightAnchor = closeDrawerView.rightAnchor.constraint(equalTo: (currentWindow?.rightAnchor)!,constant: widthCloseNavDrawer!)
+        rightAnchor?.isActive = true
+        closeDrawerView.topAnchor.constraint(equalTo: (currentWindow?.topAnchor)!).isActive = true
     }
     
     func setupNavigationBar() {
@@ -104,7 +122,9 @@ class HomeViewController: UIViewController {
     }
     
     @objc func showNavigationDrawer() {
+        UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
         leftAnchor?.constant = 0
+        rightAnchor?.constant = 0
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
             self.currentWindow?.layoutIfNeeded()
             self.currentWindow?.updateConstraints()
@@ -113,6 +133,15 @@ class HomeViewController: UIViewController {
             self.view.setNeedsLayout()
         })
         
+    }
+    
+    @objc func closeNavDrawer() {
+        UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
+        leftAnchor?.constant = -widthNavDrawer!
+        rightAnchor?.constant = widthCloseNavDrawer!
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+            self.currentWindow?.layoutIfNeeded()
+        })
     }
     
     func displayDetailHotel() {
