@@ -26,9 +26,10 @@ class HomeViewController: UIViewController {
     var leftAnchor: NSLayoutConstraint?
     var rightAnchor: NSLayoutConstraint?
     
-    let navDrawerView : NavDrawerView = {
+    lazy var navDrawerView : NavDrawerView = {
        let ndv = NavDrawerView()
        ndv.translatesAutoresizingMaskIntoConstraints = false
+        ndv.homeViewController = self
        return ndv
     }()
     

@@ -11,6 +11,7 @@ import UIKit
 class NavDrawerView: UIView {
     
     let navDrawerCvId = "navDrawerCvId"
+    var homeViewController: HomeViewController?
     
     let menuItems = [Menu(name: "Home",imageName: "home"),Menu(name: "Account",imageName: "account"),Menu(name: "Bookings",imageName: "booking"),Menu(name: "Transactions",imageName: "transaction"),Menu(name: "Wallet",imageName: "wallet"),Menu(name: "Messages",imageName: "message"),Menu(name: "Settings",imageName: "setting"),Menu(name: "Logout",imageName: "logout")]
     
@@ -105,6 +106,10 @@ extension NavDrawerView: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        homeViewController?.closeNavDrawer()
     }
     
 }
