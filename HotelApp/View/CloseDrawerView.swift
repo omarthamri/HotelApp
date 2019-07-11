@@ -20,7 +20,7 @@ class CloseDrawerView: UIView {
     }
     
     func setupView() {
-        
+        backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
     }
     
 }
