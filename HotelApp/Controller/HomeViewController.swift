@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         stf.translatesAutoresizingMaskIntoConstraints = false
         return stf
     }()
-    
+    var selectedItem: Int?
     var leftAnchor: NSLayoutConstraint?
     var rightAnchor: NSLayoutConstraint?
     
@@ -140,9 +140,11 @@ class HomeViewController: UIViewController {
         UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
         leftAnchor?.constant = -widthNavDrawer!
         rightAnchor?.constant = widthCloseNavDrawer!
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-            self.currentWindow?.layoutIfNeeded()
-        })
+        self.currentWindow?.layoutIfNeeded()
+        if selectedItem == 1 {
+            let accountViewController = AccountViewController()
+            navigationController?.pushViewController(accountViewController, animated: false)
+        }
     }
     
     func displayDetailHotel() {

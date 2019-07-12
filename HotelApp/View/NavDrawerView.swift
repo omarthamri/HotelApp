@@ -12,7 +12,7 @@ class NavDrawerView: UIView {
     
     let navDrawerCvId = "navDrawerCvId"
     var homeViewController: HomeViewController?
-    
+    var accountViewController: AccountViewController?
     let menuItems = [Menu(name: "Home",imageName: "home"),Menu(name: "Account",imageName: "account"),Menu(name: "Bookings",imageName: "booking"),Menu(name: "Transactions",imageName: "transaction"),Menu(name: "Wallet",imageName: "wallet"),Menu(name: "Messages",imageName: "message"),Menu(name: "Settings",imageName: "setting"),Menu(name: "Logout",imageName: "logout")]
     
     var headerView: UIView = {
@@ -95,7 +95,7 @@ class NavDrawerView: UIView {
 extension NavDrawerView: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuItems.count 
+        return menuItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,7 +109,15 @@ extension NavDrawerView: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        homeViewController?.closeNavDrawer()
+        if homeViewController != nil {
+            homeViewController?.selectedItem = indexPath.item
+            homeViewController?.closeNavDrawer()
+        } else {
+            accountViewController?.selectedItem = indexPath.item
+            accountViewController?.closeNavDrawer()
+        }
+        
+        
     }
     
 }
