@@ -35,6 +35,7 @@
 		48B8C7E122D79A3C00E18E00 /* NavDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C7E022D79A3C00E18E00 /* NavDrawerView.swift */; };
 		48B8C7E322D79B2000E18E00 /* CloseDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C7E222D79B2000E18E00 /* CloseDrawerView.swift */; };
 		48DC3FEA22D8C91B00D3A6E6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DC3FE922D8C91B00D3A6E6 /* AccountViewController.swift */; };
+		48DC3FEC22D8CDA400D3A6E6 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DC3FEB22D8CDA400D3A6E6 /* AccountView.swift */; };
 		48F29C8E22D3AD2D004BA8C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */; };
 		48F29C9022D3EDDF004BA8C0 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C8F22D3EDDF004BA8C0 /* CityCollectionViewCell.swift */; };
 		48F29C9222D3EF50004BA8C0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F29C9122D3EF50004BA8C0 /* City.swift */; };
@@ -97,6 +98,7 @@
 		48B8C7E022D79A3C00E18E00 /* NavDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDrawerView.swift; sourceTree = "<group>"; };
 		48B8C7E222D79B2000E18E00 /* CloseDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseDrawerView.swift; sourceTree = "<group>"; };
 		48DC3FE922D8C91B00D3A6E6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		48DC3FEB22D8CDA400D3A6E6 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		48F29C8D22D3AD2D004BA8C0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		48F29C8F22D3EDDF004BA8C0 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		48F29C9122D3EF50004BA8C0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				48B8C7E022D79A3C00E18E00 /* NavDrawerView.swift */,
 				48B8C7E222D79B2000E18E00 /* CloseDrawerView.swift */,
 				485E133E22D7F5EA0023016F /* MenuCollectionViewCell.swift */,
+				48DC3FEB22D8CDA400D3A6E6 /* AccountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				487201E322D5488A00E91AE5 /* CreditCard.swift in Sources */,
 				48AF499B22D1060D00937611 /* ViewController.swift in Sources */,
 				48AF49A122D1060D00937611 /* HotelApp.xcdatamodeld in Sources */,
+				48DC3FEC22D8CDA400D3A6E6 /* AccountView.swift in Sources */,
 				48565C0E22D64FC800BFE56A /* AddCardView.swift in Sources */,
 				48A86DC722D4E96B005D7C93 /* HotelDetailViewController.swift in Sources */,
 				48F29C9022D3EDDF004BA8C0 /* CityCollectionViewCell.swift in Sources */,

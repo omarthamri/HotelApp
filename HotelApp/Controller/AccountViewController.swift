@@ -13,7 +13,11 @@ class AccountViewController: UIViewController {
     var selectedItem: Int?
     var leftAnchor: NSLayoutConstraint?
     var rightAnchor: NSLayoutConstraint?
-    
+    let accountView: AccountView = {
+       let av = AccountView()
+        av.translatesAutoresizingMaskIntoConstraints = false
+        return av
+    }()
     lazy var navDrawerView : NavDrawerView = {
         let ndv = NavDrawerView()
         ndv.translatesAutoresizingMaskIntoConstraints = false
@@ -45,10 +49,12 @@ class AccountViewController: UIViewController {
         view.backgroundColor = UIColor.white
         currentWindow?.addSubview(navDrawerView)
         currentWindow?.addSubview(closeDrawerView)
-        
+        view.addSubview(accountView)
     }
     
     func setupConstraints() {
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":accountView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-64-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":accountView]))
         widthNavDrawer = (currentWindow?.frame.width)! * 2 / 3
         widthCloseNavDrawer = (currentWindow?.frame.width)! / 3
         navDrawerView.widthAnchor.constraint(equalToConstant: widthNavDrawer!).isActive = true
