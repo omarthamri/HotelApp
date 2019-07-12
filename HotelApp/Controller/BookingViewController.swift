@@ -98,12 +98,14 @@ class BookingViewController: UIViewController {
             if selectedItem == 1 {
                 let accountViewController = AccountViewController()
                 navigationController?.pushViewController(accountViewController, animated: false)
+            } else if selectedItem == 7 {
+                print("logout")
             } else {
                 let homeViewController = HomeViewController()
                 navigationController?.pushViewController(homeViewController, animated: false)
             }
-            
         }
+        
     }
     
     

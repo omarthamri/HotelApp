@@ -106,6 +106,8 @@ class AccountViewController: UIViewController {
             if selectedItem == 2 {
                 let bookingViewController = BookingViewController()
                 navigationController?.pushViewController(bookingViewController, animated: false)
+            } else if selectedItem == 7 {
+                print("logout")
             } else {
                 let homeViewController = HomeViewController()
                 navigationController?.pushViewController(homeViewController, animated: false)

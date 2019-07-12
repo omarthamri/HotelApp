@@ -22,10 +22,22 @@ class HomeViewController: UIViewController {
         stf.translatesAutoresizingMaskIntoConstraints = false
         return stf
     }()
+    let alphaView: UIView = {
+        let av = UIView()
+        av.backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
+        av.translatesAutoresizingMaskIntoConstraints = false
+        return av
+    }()
+    let logoutView: LogoutView = {
+        let lv = LogoutView()
+        lv.translatesAutoresizingMaskIntoConstraints = false
+        return lv
+        }()
     var selectedItem: Int?
     var leftAnchor: NSLayoutConstraint?
     var rightAnchor: NSLayoutConstraint?
-    
+    var logoutTopAnchor: NSLayoutConstraint?
+    var alphaViewTopAnchor: NSLayoutConstraint?
     lazy var navDrawerView : NavDrawerView = {
        let ndv = NavDrawerView()
        ndv.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +99,8 @@ class HomeViewController: UIViewController {
         cityCollectionView.backgroundColor = UIColor.white
         currentWindow?.addSubview(navDrawerView)
         currentWindow?.addSubview(closeDrawerView)
+        currentWindow?.addSubview(alphaView)
+        currentWindow?.addSubview(logoutView)
     }
     
     func setupConstraints() {
@@ -106,6 +120,14 @@ class HomeViewController: UIViewController {
         rightAnchor = closeDrawerView.rightAnchor.constraint(equalTo: (currentWindow?.rightAnchor)!,constant: widthCloseNavDrawer!)
         rightAnchor?.isActive = true
         closeDrawerView.topAnchor.constraint(equalTo: (currentWindow?.topAnchor)!).isActive = true
+        currentWindow?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":alphaView]))
+        alphaViewTopAnchor = alphaView.topAnchor.constraint(equalTo: (currentWindow?.topAnchor)!, constant: (currentWindow?.frame.height)!)
+        alphaViewTopAnchor?.isActive = true
+        alphaView.heightAnchor.constraint(equalTo: (currentWindow?.heightAnchor)!).isActive = true
+        currentWindow?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[v0]-30-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":logoutView]))
+        logoutView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        logoutTopAnchor = logoutView.centerYAnchor.constraint(equalTo: (currentWindow?.centerYAnchor)!, constant: (currentWindow?.frame.height)! )
+        logoutTopAnchor?.isActive = true
     }
     
     func setupNavigationBar() {
@@ -136,6 +158,10 @@ class HomeViewController: UIViewController {
         
     }
     
+    func setupLogout() {
+        
+    }
+    
     @objc func closeNavDrawer() {
         UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
         leftAnchor?.constant = -widthNavDrawer!
@@ -144,6 +170,13 @@ class HomeViewController: UIViewController {
         if selectedItem == 1 {
             let accountViewController = AccountViewController()
             navigationController?.pushViewController(accountViewController, animated: false)
+        } else if selectedItem == 7 {
+            alphaViewTopAnchor?.constant = 0
+            logoutTopAnchor?.constant = 0
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+                self.currentWindow?.layoutIfNeeded()
+            })
+            
         } else if selectedItem == 2 {
             let bookingViewController = BookingViewController()
             navigationController?.pushViewController(bookingViewController, animated: false)
