@@ -1,5 +1,5 @@
 //
-//  AccountViewController.swift
+//  BookingViewController.swift
 //  HotelApp
 //
 //  Created by Omar Thamri on 12/07/2019.
@@ -8,20 +8,15 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class BookingViewController: UIViewController {
     
     var selectedItem: Int?
     var leftAnchor: NSLayoutConstraint?
     var rightAnchor: NSLayoutConstraint?
-    let accountView: AccountView = {
-       let av = AccountView()
-        av.translatesAutoresizingMaskIntoConstraints = false
-        return av
-    }()
     lazy var navDrawerView : NavDrawerView = {
         let ndv = NavDrawerView()
+        ndv.bookingViewController = self
         ndv.translatesAutoresizingMaskIntoConstraints = false
-        ndv.accountViewController = self
         return ndv
     }()
     
@@ -49,12 +44,9 @@ class AccountViewController: UIViewController {
         view.backgroundColor = UIColor.white
         currentWindow?.addSubview(navDrawerView)
         currentWindow?.addSubview(closeDrawerView)
-        view.addSubview(accountView)
     }
     
     func setupConstraints() {
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":accountView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-64-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":accountView]))
         widthNavDrawer = (currentWindow?.frame.width)! * 2 / 3
         widthCloseNavDrawer = (currentWindow?.frame.width)! / 3
         navDrawerView.widthAnchor.constraint(equalToConstant: widthNavDrawer!).isActive = true
@@ -71,7 +63,7 @@ class AccountViewController: UIViewController {
     
     func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "Account"
+        navigationItem.title = "Booking history"
         navigationController?.navigationBar.barTintColor = UIColor.orange
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -102,10 +94,10 @@ class AccountViewController: UIViewController {
         leftAnchor?.constant = -widthNavDrawer!
         rightAnchor?.constant = widthCloseNavDrawer!
         self.currentWindow?.layoutIfNeeded()
-        if selectedItem != 1 {
-            if selectedItem == 2 {
-                let bookingViewController = BookingViewController()
-                navigationController?.pushViewController(bookingViewController, animated: false)
+        if selectedItem != 2 {
+            if selectedItem == 1 {
+                let accountViewController = AccountViewController()
+                navigationController?.pushViewController(accountViewController, animated: false)
             } else {
                 let homeViewController = HomeViewController()
                 navigationController?.pushViewController(homeViewController, animated: false)
@@ -113,5 +105,6 @@ class AccountViewController: UIViewController {
             
         }
     }
+    
     
 }

@@ -144,6 +144,9 @@ class HomeViewController: UIViewController {
         if selectedItem == 1 {
             let accountViewController = AccountViewController()
             navigationController?.pushViewController(accountViewController, animated: false)
+        } else if selectedItem == 2 {
+            let bookingViewController = BookingViewController()
+            navigationController?.pushViewController(bookingViewController, animated: false)
         }
     }
     

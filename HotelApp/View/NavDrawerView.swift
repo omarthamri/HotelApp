@@ -12,6 +12,7 @@ class NavDrawerView: UIView {
     
     let navDrawerCvId = "navDrawerCvId"
     var homeViewController: HomeViewController?
+    var bookingViewController: BookingViewController?
     var accountViewController: AccountViewController?
     let menuItems = [Menu(name: "Home",imageName: "home"),Menu(name: "Account",imageName: "account"),Menu(name: "Bookings",imageName: "booking"),Menu(name: "Transactions",imageName: "transaction"),Menu(name: "Wallet",imageName: "wallet"),Menu(name: "Messages",imageName: "message"),Menu(name: "Settings",imageName: "setting"),Menu(name: "Logout",imageName: "logout")]
     
@@ -112,10 +113,14 @@ extension NavDrawerView: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         if homeViewController != nil {
             homeViewController?.selectedItem = indexPath.item
             homeViewController?.closeNavDrawer()
-        } else {
+        } else if accountViewController != nil {
             accountViewController?.selectedItem = indexPath.item
             accountViewController?.closeNavDrawer()
+        } else if bookingViewController != nil {
+            bookingViewController?.selectedItem = indexPath.item
+            bookingViewController?.closeNavDrawer()
         }
+        
         
         
     }
