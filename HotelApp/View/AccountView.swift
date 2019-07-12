@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AccountView: UIView {
+class AccountView: UIView, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
-    let profileImgView : UIImageView = {
+    var profileImgView : UIImageView = {
        let piv = UIImageView()
         piv.image = UIImage(named: "no-profil")
         piv.contentMode = .scaleToFill
@@ -19,13 +19,16 @@ class AccountView: UIView {
         return piv
     }()
     
-    let cameraImgView: UIImageView = {
+    lazy var cameraImgView: UIImageView = {
         let civ = UIImageView()
         civ.image = UIImage(named: "camera")
         civ.tintColor = UIColor.white
         civ.contentMode = .scaleToFill
         civ.clipsToBounds = true
         civ.translatesAutoresizingMaskIntoConstraints = false
+        let imgTapped = UITapGestureRecognizer(target: self, action: #selector(cameraImgTapped))
+        civ.isUserInteractionEnabled = true
+        civ.addGestureRecognizer(imgTapped)
         return civ
     }()
     
@@ -145,6 +148,15 @@ class AccountView: UIView {
         return button
     }()
     
+    lazy var imagePicker: UIImagePickerController = {
+       let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.allowsEditing = false
+        return imagePicker
+    }()
+    var accountViewController: AccountViewController?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -194,6 +206,19 @@ class AccountView: UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cityView]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[v0]-20-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":saveChangesButton]))
         
+    }
+    
+    @objc func cameraImgTapped() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            accountViewController?.present(imagePicker, animated: true, completion: nil)
+            
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        accountViewController?.dismiss(animated: true, completion: { () -> Void in
+        })
+        profileImgView.image = image
     }
     
     @objc func saveChangeAction() {

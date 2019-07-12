@@ -13,8 +13,9 @@ class AccountViewController: UIViewController {
     var selectedItem: Int?
     var leftAnchor: NSLayoutConstraint?
     var rightAnchor: NSLayoutConstraint?
-    let accountView: AccountView = {
-       let av = AccountView()
+    lazy var  accountView: AccountView = {
+       var av = AccountView()
+        av.accountViewController = self
         av.translatesAutoresizingMaskIntoConstraints = false
         return av
     }()
@@ -22,6 +23,8 @@ class AccountViewController: UIViewController {
         let ndv = NavDrawerView()
         ndv.translatesAutoresizingMaskIntoConstraints = false
         ndv.accountViewController = self
+        ndv.bookingViewController = nil
+        ndv.homeViewController = nil
         return ndv
     }()
     
@@ -160,9 +163,12 @@ class AccountViewController: UIViewController {
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
                     self.currentWindow?.layoutIfNeeded()
                 })
-            } else {
+            } else if selectedItem == 0 {
                 let homeViewController = HomeViewController()
                 navigationController?.pushViewController(homeViewController, animated: false)
+            } else {
+                let accountViewController = AccountViewController()
+                navigationController?.pushViewController(accountViewController, animated: false)
             }
             
         }

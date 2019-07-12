@@ -16,6 +16,8 @@ class BookingViewController: UIViewController {
     lazy var navDrawerView : NavDrawerView = {
         let ndv = NavDrawerView()
         ndv.bookingViewController = self
+        ndv.homeViewController = nil
+        ndv.accountViewController = nil
         ndv.translatesAutoresizingMaskIntoConstraints = false
         return ndv
     }()
@@ -151,9 +153,12 @@ class BookingViewController: UIViewController {
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
                     self.currentWindow?.layoutIfNeeded()
                 })
-            } else {
+            } else if selectedItem == 0 {
                 let homeViewController = HomeViewController()
                 navigationController?.pushViewController(homeViewController, animated: false)
+            } else {
+                let bookingViewController = BookingViewController()
+                navigationController?.pushViewController(bookingViewController, animated: false)
             }
         }
         

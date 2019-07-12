@@ -43,6 +43,8 @@ class HomeViewController: UIViewController {
        let ndv = NavDrawerView()
        ndv.translatesAutoresizingMaskIntoConstraints = false
         ndv.homeViewController = self
+        ndv.accountViewController = nil
+        ndv.bookingViewController = nil
        return ndv
     }()
     
