@@ -93,7 +93,7 @@ class BookingViewController: UIViewController {
     
     func setupLogoutView() {
         currentWindow?.addSubview(alphaView)
-        currentWindow?.addSubview(logoutView)
+        currentWindow?.addSubview(logoutView) 
     }
     
     func setupLogoutViewConstraints() {
