@@ -119,6 +119,8 @@ extension NavDrawerView: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         } else if bookingViewController != nil {
             bookingViewController?.selectedItem = indexPath.item
             bookingViewController?.closeNavDrawer()
+        } else {
+            print("all vc are nil")
         }
         
         
