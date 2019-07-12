@@ -10,6 +10,10 @@ import UIKit
 
 class LogoutView: UIView {
     
+    var homeViewController: HomeViewController?
+    var accountViewControler: AccountViewController?
+    var bookingViewController: BookingViewController?
+    
     let headerView: UIView = {
        let hv = UIView()
         hv.backgroundColor = UIColor.orange
@@ -45,6 +49,7 @@ class LogoutView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(okButtonClicked), for: .touchUpInside)
         return button
     }()
     
@@ -56,6 +61,7 @@ class LogoutView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(cancelButtonClicked), for: .touchUpInside)
         return button
     }()
     
@@ -90,6 +96,26 @@ class LogoutView: UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(30)]-10-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":cancelButton]))
         let widthBtn = (UIScreen.main.bounds.width - 120) / 2
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[v0(\(widthBtn))]-30-[v1(\(widthBtn))]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0":okButton,"v1":cancelButton]))
+    }
+    
+    @objc func okButtonClicked() {
+        if homeViewController != nil {
+        homeViewController?.Logout()
+        } else if accountViewControler != nil {
+            accountViewControler?.Logout()
+        } else if bookingViewController != nil {
+            bookingViewController?.Logout()
+        }
+    }
+    
+    @objc func cancelButtonClicked() {
+        if homeViewController != nil {
+            homeViewController?.cancelLogout()
+        } else if accountViewControler != nil {
+            accountViewControler?.cancelLogout()
+        } else if bookingViewController != nil {
+            bookingViewController?.cancelLogout()
+        }
     }
     
 }
